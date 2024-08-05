@@ -1,4 +1,4 @@
-/* General styles */
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,26 +6,35 @@ body {
   box-sizing: border-box;
 }
 
-/* Header styles */
-.header {
-  background-color: #4caf50;
-  color: white;
+h1 {
+  color: orange;
   text-align: center;
-  padding: 1rem 0;
 }
 
-/* Navbar styles */
+p {
+  font-size: 16px;
+  color: brown;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Navbar */
 .navbar {
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
   background-color: #333;
+  text-align: center;
 }
 
 .navbar a {
-  padding: 14px 20px;
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
+  padding: 14px 20px;
   text-decoration: none;
 }
 
@@ -34,38 +43,66 @@ body {
   color: black;
 }
 
-/* Content styles */
+/* Content */
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem;
+  padding: 20px;
 }
 
 .image-container {
-  margin: 1rem;
-  flex: 1 0 21%; /* Adjust this value to change the number of images per row */
-  max-width: 21%; /* Adjust this value to change the number of images per row */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+  max-width: 200px;
+  margin: 10px;
+  text-align: center;
 }
 
 .image-container img {
   width: 100%;
   height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  transition: transform 0.2s; /* Animation */
 }
 
-.image-container:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.image-container img:hover {
+  transform: scale(1.05); /* Zoom effect */
 }
 
-/* Footer styles */
+/* Footer */
 .footer {
   background-color: #333;
   color: white;
+  padding: 10px;
   text-align: center;
-  padding: 1rem 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .image-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
