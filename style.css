@@ -19,28 +19,37 @@ p {
 
 /* Header */
 .header {
-  background-color: #f1f1f1;
+  background-color: #007bff; /* Bootstrap primary color */
   padding: 20px;
+  color: white;
 }
 
 /* Navbar */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  text-align: center;
+.navbar-custom {
+  background-color: #343a40; /* Dark gray background */
+  border-bottom: 2px solid #007bff; /* Add a bottom border */
 }
 
-.navbar a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff; /* White text */
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+.navbar-custom .nav-link:hover,
+.navbar-custom .navbar-brand:hover {
+  color: #007bff; /* Bootstrap primary color on hover */
+  background-color: #212529; /* Darker background on hover */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: #ffffff; /* White border for toggler */
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Content */
@@ -52,7 +61,7 @@ p {
 }
 
 .image-container {
-  flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+  flex: 1 1 200px;
   max-width: 200px;
   margin: 10px;
   text-align: center;
@@ -64,16 +73,16 @@ p {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  transition: transform 0.2s; /* Animation */
+  transition: transform 0.2s;
 }
 
 .image-container img:hover {
-  transform: scale(1.05); /* Zoom effect */
+  transform: scale(1.05);
 }
 
 /* Footer */
 .footer {
-  background-color: #333;
+  background-color: #343a40;
   color: white;
   padding: 10px;
   text-align: center;
@@ -81,9 +90,10 @@ p {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .navbar a {
+  .navbar-custom .nav-link {
     display: block;
     margin: 5px 0;
+    text-align: center;
   }
 
   .content {
